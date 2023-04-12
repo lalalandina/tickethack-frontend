@@ -10,7 +10,7 @@ document.querySelector('#glass').addEventListener('click', function () {
 		body: JSON.stringify({ departure, arrival, date}),
 	}).then(response => response.json())
 		.then(data => { console.log(data)
-			if (data.result) {
+			if (data.result && data.trips.length>0) {
                 document.querySelector('#init').innerHTML = ""
                 for (let i=0; i<data.trips.length; i++){
 				document.querySelector('#init').innerHTML += `<div class="tripList">
@@ -22,6 +22,7 @@ document.querySelector('#glass').addEventListener('click', function () {
             </div>
 				
 				`
+                updateAddTripEventListener()
 				;}
 			}else{
                 document.querySelector('#init').innerHTML = ""
