@@ -1,6 +1,7 @@
 body {
     margin : 0;
     background-color: rgb(236, 233, 226);
+    font-family: 'Noto Sans', sans-serif;
 }
 
 #header {
@@ -29,10 +30,11 @@ body {
     overflow: auto;
     background-color: white;
     flex-direction: column;
-    border-radius: 5%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-#cart-container {
+#container {
     display: grid;
     height: 100vh;
     grid-template-rows: repeat(12,1fr);
@@ -47,5 +49,4 @@ body {
     justify-content: center;
     align-items: center;
     height: 80px;
-    border-radius:5%
 }
