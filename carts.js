@@ -1,7 +1,17 @@
+function totalPrice (arr) {
+    let total = 0
+    for (let item of arr){
+            total += item.price
+        }
+        return total
+}
+
+// FETCH all trips in cart on page opening
 fetch('http://localhost:3000/carts/trips')
 	.then(response => response.json())
 	.then(data => {
-		if (data) {
+        console.log(data)
+		if (data.length > 0) {
             document.querySelector('#fullcart').textContent = "";
             document.querySelector('#cart-status').textContent = "My cart"
             console.log(data)
@@ -13,38 +23,58 @@ fetch('http://localhost:3000/carts/trips')
                     <p class = "trip">${item.departure} > ${item.arrival}</p>
                     <p class = "time">${new Date(item.date).getHours()-2}:${new Date(item.date).getMinutes()<10?0:""}${new Date(item.date).getMinutes()}</p>
                     <p class = "price">${item.price}€</p>
-                    <button type="button" class="btn-delete">X</button>
+                    <button type="button" class="btn-delete" id="${item._id}">X</button>
                 </div>
                 `
             }
+             
+
                 document.querySelector('#main').innerHTML +=
                 `
-                <div id = "total">
-                    <span>Hello</span>
+                <div id = "cart-total">
+                    <div id = "totalprice">Total : ${totalPrice(data)}€</div>
+                    <button type="button" id="btn-purchase">Purchase</button>
                 </div>
                 `
 
+
+                // PURCHASE EVENT
+                document.querySelector('#btn-purchase').addEventListener('click',function () {
+                    fetch('http://localhost:3000/carts/purchase')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    window.location.assign('booking.html');
+                }
+                )
+                })
+
+                updateDeleteTripEventListener()
+
             }
-            // let total = 0
-            // for (let item of data){
-            //     total += item.price
-            // }
-            // console.log(total)
-			// for (let i = 0; i < data.weather.length; i++) {
-			// 	document.querySelector('#cityList').innerHTML += `
-			// 	<div class="cityContainer">
-			// 	<p class="name">${data.weather[i].cityName}</p>
-			// 	<p class="description">${data.weather[i].description}</p>
-			// 	<img class="weatherIcon" src="images/${data.weather[i].main}.png"/>
-			// 	<div class="temperature">
-			// 		<p class="tempMin">${data.weather[i].tempMin}°C</p>
-			// 		<span>-</span>
-			// 		<p class="tempMax">${data.weather[i].tempMax}°C</p>
-			// 	</div>
-			// 	<button class="deleteCity" id="${data.weather[i].cityName}">Delete</button>
-			// </div>
-			// `;
-			// }
-			// updateDeleteCityEventListener();
+           
 		}
 	);
+
+
+    function updateDeleteTripEventListener() {
+        for (let i = 0; i < document.querySelectorAll('.btn-delete').length; i++) {
+            document.querySelectorAll('.btn-delete')[i].addEventListener('click', function () {
+                fetch('http://localhost:3000/carts/delete', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ trip: this.id }),
+	})
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data[0].trips)
+                        if (data) {
+                            this.parentNode.remove();
+                            document.querySelector('#totalprice').textContent = `Total : ${totalPrice(data[0].trips)}€`
+                        }
+                    });
+            });
+        }
+    }
+
+
