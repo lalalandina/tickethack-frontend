@@ -22,16 +22,18 @@ body {
     grid-column-end: 13;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;   
+    flex-direction: column; 
 }
 
 #cart {
-    display: block;
-    overflow: auto;
+    display: flex;
     background-color: white;
     flex-direction: column;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    width: 1000px;
+    align-items: center;
 }
 
 #container {
@@ -39,14 +41,47 @@ body {
     height: 100vh;
     grid-template-rows: repeat(12,1fr);
     grid-template-columns: repeat(12,1fr);
-
 }
 
-.cart-text {
-    width: 600px;
+#cart-status {
+    width: 1000px;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     height: 80px;
+}
+
+#cart-container {
+    width: 850px;
+    display: block;
+    height: auto;
+}
+
+.cart-item {
+    background-color: rgb(236, 233, 226);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-delete {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(137, 186, 145);
+    border: none;
+    color:rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+#total {
+    background-color: rgb(38, 72, 100);
+    height: 60px;
+    width: 1000px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
