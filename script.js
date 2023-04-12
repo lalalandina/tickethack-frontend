@@ -14,7 +14,7 @@ document.querySelector('#glass').addEventListener('click', function () {
                 document.querySelector('#init').innerHTML = ""
                 for (let i=0; i<data.trips.length; i++){
 				document.querySelector('#init').innerHTML += `<div class="tripList">
-                <p>${data.trips[i].departure}>${data.trips[i].arrival}</p>
+                <p>${data.trips[i].departure} > ${data.trips[i].arrival}</p>
                 <p>${new Date(data.trips[i].date).getHours()-2}:${new Date(data.trips[i].date).getMinutes()<10?0:""}${new Date(data.trips[i].date).getMinutes()}</p>
                 <p>${data.trips[i].price}€</p>
                 <button type="button" class="btn-add" id="${data.trips[i]._id}">Book</button>
