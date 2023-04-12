@@ -1,9 +1,5 @@
 body {
     margin : 0;
-    background-image: url(image/background.jpg);
-    background-position: center center;
-  background-size: cover;
-
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -44,6 +40,11 @@ body {
     height: 100vh;
     grid-template-rows: repeat(12,1fr);
     grid-template-columns: repeat(12,1fr);
+    background-image: url(image/background.jpg);
+    background-position: center center;
+    background-size: cover;
+
+
 
 }
 
@@ -69,5 +70,16 @@ body {
     text-decoration: none;
     color: #000000;
    
+
+}
+
+#cart-container {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: repeat(12,1fr);
+    grid-template-columns: repeat(12,1fr);
+    background-color: antiquewhite;
+
+
 
 }
