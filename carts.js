@@ -2,12 +2,12 @@ fetch('http://localhost:3000/carts/trips')
 	.then(response => response.json())
 	.then(data => {
 		if (data) {
-            document.querySelector('#cart-container').textContent = "";
+            document.querySelector('#fullcart').textContent = "";
             document.querySelector('#cart-status').textContent = "My cart"
             console.log(data)
             
             for (let item of data) {
-                document.querySelector('#cart-container').innerHTML += 
+                document.querySelector('#fullcart').innerHTML += 
                 `
                 <div class = "cart-item">
                     <p class = "trip">${item.departure} > ${item.arrival}</p>
