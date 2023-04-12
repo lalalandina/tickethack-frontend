@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
     <div id = "container">
@@ -17,14 +18,44 @@
             </div>
         </div>
 
-        <div id="main">
-            <div id="cart">
-                <div class = "cart-text">No booking yet</div>
-                <div class = "cart-text">Why not plan a trip ?</div>
-            </div>
-
+        <div id="mainindex">
+            <div id="text">
+           <h1>Explore the world effortlessly by train !</h1>
+           <h2>Compare, book and enjoy cheap prices for train tickets: your journey starts on Tickethack</h2>
         </div>
+           <div id="searchtrip">
+            <div id="trajet">
+            <input id="departure" type="text" placeholder="Departure" />
+            <input id="arrival" type="text" placeholder="Arrival" />
+        </div>
+        <div id=searchdate>
+            <label for="date">Sélectionnez une date :</label>
+  <input type="date" id="date" name="date">
+ 
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $( function() {
+      $( "#date" ).datepicker();
+    } );
+  </script> -->
+    <button id="btnSearch"><img id="glass" src="image/glass.png" /></button>
     </div>
+   
+</div>
+       
+<div id="result">
+    <div id="init">
+
+    <img src="image/train.png" alt="train">
+    <hr>
+    <p>It's time to book your future trip</p>
+</div>
+</div>
+</div>
+</div>
+  
      <script src="script.js"></script> 
+  
 </body>
 </html>

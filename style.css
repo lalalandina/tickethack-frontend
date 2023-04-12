@@ -25,6 +25,8 @@ body {
     justify-content: center;
     align-items: center;   
     flex-direction: column; 
+  
+  
 }
 
 #cart {
@@ -112,4 +114,84 @@ body {
     grid-template-columns: repeat(12,1fr);
     background-color: antiquewhite;
     height: 100vh;
+}
+
+#text
+{  color: white;
+    text-align: center;
+  
+}
+
+#mainindex {
+    grid-row-start: 2;
+    grid-row-end: 13;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+   
+}
+
+#searchtrip{
+    background-color: white;
+    border-radius: 30rem;
+    height: 50px;
+    width: 60%;
+    display: flex;
+
+	align-items: center;
+    justify-content: space-around;
+   
+
+}
+
+#glass {
+	border: none;
+	background-color: transparent;
+	color: black;
+	cursor: pointer;
+    width: 30px;
+    height: auto;
+
+
+}
+
+#btnSearch{
+    border: none;
+	background-color: transparent;
+}
+
+#searchdate{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+
+}
+
+#result {
+    background-color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+    align-items: center;  
+    margin-top: 20px;
+    width: 60%;
+    border-radius: 30px;
+   
+}
+
+#init {
+  
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+    align-items: center;    
+}
+
+hr{
+    color: #7BC5B0;
+    border: 1px solid  #7BC5B0  ;
+    width: 200px;
 }
