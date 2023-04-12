@@ -7,7 +7,7 @@ function totalPrice (arr) {
 }
 
 // FETCH all trips in cart on page opening
-fetch('http://localhost:3000/carts/trips')
+fetch('https://tickehack-backend.vercel.app/carts/trips')
 	.then(response => response.json())
 	.then(data => {
         console.log(data)
@@ -40,7 +40,7 @@ fetch('http://localhost:3000/carts/trips')
 
                 // PURCHASE EVENT
                 document.querySelector('#btn-purchase').addEventListener('click',function () {
-                    fetch('http://localhost:3000/carts/purchase')
+                    fetch('https://tickehack-backend.vercel.app/carts/purchase')
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
@@ -60,7 +60,7 @@ fetch('http://localhost:3000/carts/trips')
     function updateDeleteTripEventListener() {
         for (let i = 0; i < document.querySelectorAll('.btn-delete').length; i++) {
             document.querySelectorAll('.btn-delete')[i].addEventListener('click', function () {
-                fetch('http://localhost:3000/carts/delete', {
+                fetch('https://tickehack-backend.vercel.app/carts/delete', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ trip: this.id }),

@@ -4,7 +4,7 @@ document.querySelector('#glass').addEventListener('click', function () {
     const date = document.querySelector('#date').value;
     console.log(date)
 
-	fetch('http://localhost:3000/search', {
+	fetch('https://tickehack-backend.vercel.app/search', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({ departure, arrival, date}),
@@ -45,7 +45,7 @@ document.querySelector('#glass').addEventListener('click', function () {
 function updateAddTripEventListener() {
 	for (let i = 0; i < document.querySelectorAll('.btn-add').length; i++) {
 		document.querySelectorAll('.btn-add')[i].addEventListener('click', function () {
-			fetch('http://localhost:3000/carts/add', {
+			fetch('https://tickehack-backend.vercel.app/carts/add', {
 	method: 'POST',
 	headers: { 'Content-Type': 'application/json' },
 	body: JSON.stringify({ trip: this.id }),
@@ -61,3 +61,4 @@ function updateAddTripEventListener() {
 		});
 	}
 }
+

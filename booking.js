@@ -19,7 +19,7 @@ if(daysDiff>0){
 return result}
 
 
-fetch('http://localhost:3000/carts/bookings')
+fetch('https://tickehack-backend.vercel.app/carts/bookings')
 	.then(response => response.json())
 	.then(data => {
 		if (data.length > 0) {
