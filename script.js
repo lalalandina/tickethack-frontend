@@ -14,14 +14,17 @@ document.querySelector('#glass').addEventListener('click', function () {
                 document.querySelector("#init").remove()
                 for (let i=0; i<data.trips.length; i++){
 				document.querySelector('#result').innerHTML += `<div class="tripList">
-			
-            ${data.trips[i].departure}>${data.trips[i].arrival}   
+                <p>${data.trips[i].departure}>${data.trips[i].arrival}</p>
+                <p>${new Date(data.trips[i].date).getHours()-2}:${new Date(data.trips[i].date).getMinutes()<10?0:""}${new Date(data.trips[i].date).getMinutes()}</p>
+                <p>${data.trips[i].price}€</p>
+                <button type="button" class="btn-add" id="${data.trips[i]._id}">Book</button>
+        
             </div>
 				
 				`;}
-				// updateDeleteCityEventListener();
-				// document.querySelector('#cityNameInput').value = '';
-			}
+			}else{
+                    
+            }
 
 		});
 });
