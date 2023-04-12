@@ -230,3 +230,36 @@ hr{
 #enjoy {
     color: #7BC5B0;
 }
+
+.noData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     align-items: center; 
+     padding: 20px;
+}
+
+#imgNot{
+    width: 200px;
+    height: auto;
+}
+
+.tripList {
+    display: flex;
+    justify-content: space-around;
+     align-items: center; 
+     width: 500px;
+     background-color: #F6EEEF;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+
+.btn-add {
+    height: 30px;
+    width: 50px;
+    background-color: #7BC5B0;
+    border: none;
+    color:rgb(255, 255, 255);
+    border-radius: 5px;
+}

@@ -11,9 +11,9 @@ document.querySelector('#glass').addEventListener('click', function () {
 	}).then(response => response.json())
 		.then(data => { console.log(data)
 			if (data.result) {
-                document.querySelector("#init").remove()
+                document.querySelector('#init').innerHTML = ""
                 for (let i=0; i<data.trips.length; i++){
-				document.querySelector('#result').innerHTML += `<div class="tripList">
+				document.querySelector('#init').innerHTML += `<div class="tripList">
                 <p>${data.trips[i].departure}>${data.trips[i].arrival}</p>
                 <p>${new Date(data.trips[i].date).getHours()-2}:${new Date(data.trips[i].date).getMinutes()<10?0:""}${new Date(data.trips[i].date).getMinutes()}</p>
                 <p>${data.trips[i].price}€</p>
@@ -23,6 +23,14 @@ document.querySelector('#glass').addEventListener('click', function () {
 				
 				`;}
 			}else{
+                document.querySelector('#init').innerHTML = ""
+                document.querySelector('#init').innerHTML = `
+                <div class="noData">
+                <img id='imgNot'src="image/notfound.png" alt="train">
+    <hr>
+    <p>No trip found</p>
+                </div>
+                     `
                     
             }
 
