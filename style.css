@@ -71,7 +71,7 @@ body {
 }
 
 .cart-item {
-    background-color: rgb(247, 238, 218);
+    background-color: #F6EEEF;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -191,16 +191,17 @@ body {
     width: 60%;
     border-radius: 30px;
     overflow: auto;  
+  
    
 }
 
 #init {
   
-   display: flex;
+   /* display: flex;
    flex-direction: column;
    justify-content: center;
-    align-items: center; 
-    overflow: auto;  
+    align-items: center;  */
+    overflow: auto; 
      
 }
 
@@ -257,9 +258,11 @@ hr{
      align-items: center; 
      width: 500px;
      background-color: #F6EEEF;
-    margin-top: 30px;
+     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 30px;
+   
+
    
 }
 
@@ -270,4 +273,8 @@ hr{
     border: none;
     color:rgb(255, 255, 255);
     border-radius: 5px;
+}
+
+p{
+    text-align: center;
 }
