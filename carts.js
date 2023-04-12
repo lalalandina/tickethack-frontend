@@ -10,6 +10,7 @@ function totalPrice (arr) {
 fetch('http://localhost:3000/carts/trips')
 	.then(response => response.json())
 	.then(data => {
+        console.log(data)
 		if (data.length > 0) {
             document.querySelector('#fullcart').textContent = "";
             document.querySelector('#cart-status').textContent = "My cart"
@@ -36,11 +37,20 @@ fetch('http://localhost:3000/carts/trips')
                 </div>
                 `
 
+
+                // PURCHASE EVENT
+                document.querySelector('#btn-purchase').addEventListener('click',function () {
+                    fetch('http://localhost:3000/carts/purchase')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    window.location.assign('booking.html');
+                }
+                )
+                })
+
                 updateDeleteTripEventListener()
 
-
-                
-            
             }
            
 		}
@@ -66,3 +76,5 @@ fetch('http://localhost:3000/carts/trips')
             });
         }
     }
+
+

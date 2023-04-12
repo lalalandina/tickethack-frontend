@@ -13,8 +13,8 @@ const hoursDiff = Math.floor(timeDiff / (1000 * 60 * 60));
 const daysDiff = Math.floor(hoursDiff / 24);
 let result = ""
 if(daysDiff>0){
-    result = `Departure ${daysDiff} days and ${hoursDiff % 24} hours`
-} else {result = `Departure in ${(hoursDiff % 24)} hours`}
+    result = `Departure ${daysDiff} day(s) and ${hoursDiff % 24} hour(s)`
+} else {result = `Departure in ${(hoursDiff % 24)} hour(s)`}
 
 return result}
 
