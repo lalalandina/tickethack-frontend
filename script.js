@@ -21,7 +21,8 @@ document.querySelector('#glass').addEventListener('click', function () {
         
             </div>
 				
-				`;}
+				`
+				;}
 			}else{
                 document.querySelector('#init').innerHTML = ""
                 document.querySelector('#init').innerHTML = `
@@ -36,3 +37,26 @@ document.querySelector('#glass').addEventListener('click', function () {
 
 		});
 });
+
+
+
+// ADD BUTTON
+function updateAddTripEventListener() {
+	for (let i = 0; i < document.querySelectorAll('.btn-add').length; i++) {
+		document.querySelectorAll('.btn-add')[i].addEventListener('click', function () {
+			fetch('http://localhost:3000/carts/add', {
+	method: 'POST',
+	headers: { 'Content-Type': 'application/json' },
+	body: JSON.stringify({ trip: this.id }),
+})
+				.then(response => response.json())
+				.then(data => {
+					console.log(data[0].trips)
+					
+						window.location.assign('carts.html');
+
+					
+				});
+		});
+	}
+}

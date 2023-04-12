@@ -25,7 +25,7 @@ body {
     justify-content: center;
     align-items: center;   
     flex-direction: column; 
-  
+
   
 }
 
@@ -220,6 +220,7 @@ hr{
     display: flex;
     background-color: white;
     flex-direction: column;
+    justify-content: flex-start;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     width: 1000px;
